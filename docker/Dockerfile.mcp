@@ -1,0 +1,9 @@
+# MCP tool server Dockerfile
+FROM python:3.10-slim
+WORKDIR /mcp
+
+COPY mcp-server /mcp
+
+RUN pip install fastapi uvicorn PyPDF2
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
