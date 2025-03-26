@@ -23,7 +23,7 @@ if prompt := st.chat_input("Ask something about your documents or tools..."):
 
     # Tool usage simulation
     if "summarize" in prompt.lower():
-        response = call_tool("summarize_pdf", {"path": "data/resume.pdf"})
+        response = call_tool("summarize_pdf", {"path": "data/michael.osorio_CV.pdf"})
     else:
         response = "[stubbed reply] This is where your LLM call (via OpenRouter) goes."
 

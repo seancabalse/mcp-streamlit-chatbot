@@ -9,6 +9,8 @@ services:
       MCP_SERVER_URL: http://mcp-server:8000
     depends_on:
       - mcp-server
+    volumes:
+      - ../data:/app/data
 
   mcp-server:
     build:
@@ -16,3 +18,5 @@ services:
       dockerfile: docker/Dockerfile.mcp
     ports:
       - "8000:8000"
+    volumes:
+      - ../data:/mcp/data
